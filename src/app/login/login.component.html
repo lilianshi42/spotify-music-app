@@ -35,7 +35,8 @@
         [disabled]="!f.valid"
       >
         <mat-icon>login</mat-icon>
-        <span>&nbsp;&nbsp;&nbsp;Login</span>
+        <span *ngIf="!loading">&nbsp;&nbsp;&nbsp;Login</span>
+        <span *ngIf="loading">&nbsp;&nbsp;&nbsp;Processing Request</span>
       </button>
       &nbsp;&nbsp;
       <button mat-raised-button color="primary" routerLink="/register">
@@ -43,6 +44,5 @@
         <span>&nbsp;&nbsp;&nbsp;Register</span>
       </button>
     </form>
-    <div class="process" *ngIf="loading">Processing Request<br /><br /></div>
   </mat-card-content>
 </mat-card>

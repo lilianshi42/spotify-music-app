@@ -45,7 +45,8 @@
         [disabled]="loading"
       >
         <mat-icon>account_box</mat-icon>
-        <span>&nbsp;&nbsp;&nbsp;Register</span>
+        <span *ngIf="!loading">&nbsp;&nbsp;&nbsp;Register</span>
+        <span *ngIf="loading">&nbsp;&nbsp;&nbsp;Processing Request</span>
       </button>
     </form>
   </mat-card-content>
@@ -55,5 +56,4 @@
       <mat-icon>login</mat-icon>&nbsp;&nbsp;&nbsp;Login
     </a>
   </div>
-  <div class="process" *ngIf="loading">Processing Request<br /><br /></div>
 </mat-card>
